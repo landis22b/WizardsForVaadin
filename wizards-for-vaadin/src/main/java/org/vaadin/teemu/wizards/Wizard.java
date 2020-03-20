@@ -104,6 +104,16 @@ public class Wizard extends CustomComponent implements
         }
     }
 
+    private boolean hideInactive;
+
+    public boolean isHideInactive() {
+        return hideInactive;
+    }
+
+    public void setHideInactive(boolean hideInactive) {
+        this.hideInactive = hideInactive;
+    }
+
     private static final class ScrollPosition {
         int scrollTop;
         int scrollLeft;
@@ -114,7 +124,8 @@ public class Wizard extends CustomComponent implements
         }
     }
 
-    public Wizard() {
+    public Wizard(boolean hideInactive) {
+        this.hideInactive = hideInactive;
         setStyleName("wizard");
         init();
     }

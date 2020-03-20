@@ -11,7 +11,7 @@ public class WizardTests {
     public void addStep_duplicateId_exceptionThrown() {
         WizardStep step1 = Mockito.mock(WizardStep.class);
         WizardStep step2 = Mockito.mock(WizardStep.class);
-        Wizard wizard = new Wizard();
+        Wizard wizard = new Wizard(false);
         wizard.addStep(step1, "duplicateId");
         wizard.addStep(step2, "duplicateId");
     }
@@ -20,7 +20,7 @@ public class WizardTests {
      * Test case for a bug reported at <a
      * href="https://vaadin.com/forum/-/message_boards/view_message/1308454"
      * >Vaadin Forum</a>.
-     * 
+     * <p>
      * Thanks to Johan Smolders for the bug report.
      */
     @Test
@@ -30,7 +30,7 @@ public class WizardTests {
         WizardStep step3 = Mockito.mock(WizardStep.class);
         WizardStep step4 = Mockito.mock(WizardStep.class);
 
-        Wizard wizard = new Wizard();
+        Wizard wizard = new Wizard(false);
         wizard.addStep(step1);
         wizard.addStep(step2);
         wizard.addStep(step3);

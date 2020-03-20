@@ -41,7 +41,7 @@ public class WizardsDemoApplication extends UI implements
         setContent(mainLayout);
 
         // create the Wizard component and add the steps
-        wizard = new Wizard();
+        wizard = new Wizard(false);
         wizard.setUriFragmentEnabled(true);
         wizard.addListener(this);
         wizard.addStep(new IntroStep(), "intro");

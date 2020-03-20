@@ -74,6 +74,10 @@ public class WizardProgressBar extends CustomComponent implements
         }
         if (wizard.isActive(step)) {
             label.addStyleName("current");
+        } else {
+            if (wizard.isHideInactive()) {
+                label.addStyleName("invisible");
+            }
         }
         if (wizard.isFirstStep(step)) {
             label.addStyleName("first");
